@@ -1,3 +1,5 @@
-from links import get_urls_to_goods
+from good import get_desc, bs4, get_html, get_price
 
-print(get_urls_to_goods('https://30-06.ru/catalog/?PAGEN_1=2'))
+soup = bs4(get_html('https://30-06.ru/catalog/product/101808/'), 'html.parser')
+
+print(get_price(soup))
